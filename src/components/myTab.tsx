@@ -1,7 +1,7 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import React from "react";
+import React, { useState } from "react";
 import TabsWithIcon from "./customTab";
 import TradeTicket from "./tradeTicket";
 import EmptyState from "./emptystate";
@@ -25,7 +25,9 @@ function MyTab() {
         { label: "Trade Opened", date: "May 12, 2025", time: "10:35 AM" },
         { label: "Funds Deposited", date: "May 12, 2025" },
       ],
-    };
+  };
+    const [showTradeDetails, setShowTradeDetails] = useState(false);
+
   return (
     <>
       <Tabs defaultValue="all" className="w-full gap-0">
@@ -69,15 +71,17 @@ function MyTab() {
                 date="May 12"
                 tradeLink="AFYzaQA8stc"
                 openedAgo="72d 1h"
+                onToggleDetails={() => setShowTradeDetails((prev) => !prev)} // <-- Pass toggle function
+                isDetailsOpen={showTradeDetails}
               />
 
               <div className="flex justify-between">
                 <div className="bg-[#f9fafb] w-full p-6 flex flex-wrap justify-end items-end">
                   <ChatMessagePane />
-                  <CustomMessageUi/>
+                  <CustomMessageUi />
                 </div>
                 <div className="bg-gray-100 flex justify-center items-start">
-                  <TradeDetails data={tradeData} />
+                  {showTradeDetails && <TradeDetails data={tradeData} />}
                 </div>
               </div>
             </div>

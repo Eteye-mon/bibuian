@@ -23,6 +23,8 @@ interface TradeTicketProps {
   date: string;
   tradeLink: string;
   openedAgo: string;
+  onToggleDetails: () => void; 
+  isDetailsOpen?: boolean;
 }
 
 const TradeTicket: React.FC<TradeTicketProps> = ({
@@ -33,10 +35,12 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
   date,
   tradeLink,
   openedAgo,
+  onToggleDetails,
+  isDetailsOpen,
 }) => {
   const [cancelDialogOpen, setCancelDialogOpen] = useState(false);
   const [assignDialogOpen, setAssignDialogOpen] = useState(false);
-
+  const [showDetails, setShowDetails] = useState(false);
   return (
     <div className="flex flex-wrap items-center justify-between p-4 bg-white border-b gap-3">
       <div className="flex flex-col min-w-[150px]">
@@ -68,7 +72,7 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="p-[8px] border rounded-md bg-white hover:bg-gray-50  flex items-center">
-                Actions <ChevronDown/>
+                Actions <ChevronDown />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="start">
@@ -97,8 +101,11 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
           </DropdownMenu>
         </div>
 
-        <button className="bg-[#F59E0B] text-white p-[8px] rounded-md text-sm">
-          Trade Details
+        <button
+          onClick={onToggleDetails}
+          className="bg-[#F59E0B] text-white p-[8px] rounded-md text-sm"
+        >
+          {isDetailsOpen ? "Hide Details" : "Trade Details"}
         </button>
       </div>
       <CustomDialog
