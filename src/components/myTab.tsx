@@ -4,7 +4,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
 import TabsWithIcon from "./customTab";
 import TradeTicket from "./tradeTicket";
-import PaymentCard from "./paymentCard";
 import EmptyState from "./emptystate";
 import { ChatMessagePane } from "./chatpane";
 import TradeDetails from "./tradedetails";

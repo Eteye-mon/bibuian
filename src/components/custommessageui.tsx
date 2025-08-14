@@ -4,14 +4,7 @@ import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import {
-  ImageIcon,
-  FileUp,
-  Figma,
-  MonitorIcon,
-  CircleUserRound,
-  ArrowUpIcon,
   Paperclip,
-  PlusIcon,
   Send,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -86,7 +79,7 @@ export function CustomMessageUi() {
               <Send
                 className={cn(
                   "h-4 w-4",
-                  value.trim() ? "text-white" : "text-zinc-400"
+                  value.trim() ? "text-white cursor-pointer" : "text-zinc-400"
                 )}
               />
               <span className="sr-only">Send</span>

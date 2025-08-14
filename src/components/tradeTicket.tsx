@@ -67,7 +67,7 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
         <div className="relative">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="px-3 py-1 border rounded-md bg-white hover:bg-gray-50  flex items-center">
+              <button className="p-[8px] border rounded-md bg-white hover:bg-gray-50  flex items-center">
                 Actions <ChevronDown/>
               </button>
             </DropdownMenuTrigger>
@@ -97,7 +97,7 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
           </DropdownMenu>
         </div>
 
-        <button className="bg-[#F59E0B] text-white px-3 py-1 rounded-md text-sm">
+        <button className="bg-[#F59E0B] text-white p-[8px] rounded-md text-sm">
           Trade Details
         </button>
       </div>

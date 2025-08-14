@@ -12,78 +12,50 @@ const tabs = [
     content: (
       <>
         <PaymentCard
-          title="SpeedyPay"
+        active={true}
+          title="PaxfulAgent001"
           platform="Paxful"
-          amount="₦750,000"
+          amount="₦1,850,000"
           status="urgent"
           walletStatus="funded"
           messagesCount={5}
         />
         <PaymentCard
+        active={false}
           title="SpeedyPay"
           platform="Paxful"
           amount="₦750,000"
           status="warning"
-          walletStatus="funded"
+          walletStatus="unfunded"
           messagesCount={5}
         />
         <PaymentCard
-          title="SpeedyPay"
-          platform="Paxful"
-          amount="₦750,000"
+        active={false}
+          title="CryptoExchange"
+          platform="CryptoEx"
+          amount="₦2,500,000"
           status="info"
-          walletStatus="funded"
+          walletStatus="unfunded"
           messagesCount={5}
         />
         <PaymentCard
-          title="SpeedyPay"
+        active={false}
+          title="QuickTrade"
+          platform="QuickTrade"
+          amount="₦750,000"
+          status="warning"
+          walletStatus="unfunded"
+          messagesCount={5}
+        />
+        <PaymentCard
+        active={false}
+          title="PaxfulAgent001"
           platform="Paxful"
           amount="₦750,000"
           status="urgent"
-          walletStatus="funded"
-          messagesCount={5}
+          walletStatus="unfunded"
+          messagesCount={8}
         />
-        <PaymentCard
-          title="SpeedyPay"
-          platform="Paxful"
-          amount="₦750,000"
-          status="warning"
-          walletStatus="funded"
-          messagesCount={5}
-        />
-        <PaymentCard
-          title="SpeedyPay"
-          platform="Paxful"
-          amount="₦750,000"
-          status="info"
-          walletStatus="funded"
-          messagesCount={5}
-        />
-        <PaymentCard
-          title="SpeedyPay"
-          platform="Paxful"
-          amount="₦750,000"
-          status="urgent"
-          walletStatus="funded"
-          messagesCount={5}
-        />
-        <PaymentCard
-          title="SpeedyPay"
-          platform="Paxful"
-          amount="₦750,000"
-          status="warning"
-          walletStatus="funded"
-          messagesCount={5}
-        />
-        <PaymentCard
-          title="SpeedyPay"
-          platform="Paxful"
-          amount="₦750,000"
-          status="info"
-          walletStatus="funded"
-          messagesCount={5}
-        />
-        
       </>
     ),
   },
@@ -91,15 +63,22 @@ const tabs = [
     name: "Paid(6)",
     value: "paid",
     icon: CheckCircle2,
-    content: <><EmptyState message="No Item Found"/>
-    </>,
+    content: (
+      <>
+        <EmptyState message="No Item Found" />
+      </>
+    ),
   },
   {
     name: "Dispute",
     value: "dispute",
     icon: CheckCircle2,
-    content: <> <EmptyState message="No Item Found"/>
-    </>,
+    content: (
+      <>
+        {" "}
+        <EmptyState message="No Item Found" />
+      </>
+    ),
   },
 ];
 
@@ -107,7 +86,7 @@ const TabsWithIcon = () => {
   return (
     <div className="">
       <Tabs defaultValue="excalated" className="gap-4">
-        <TabsList>
+        <TabsList className="flex items-center justify-center">
           {tabs.map(({ icon: Icon, name, value }) => (
             <TabsTrigger
               key={value}

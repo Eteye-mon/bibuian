@@ -1,7 +1,9 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { MessageSquare } from "lucide-react";
+
 interface PaymentCardProps {
+  active: boolean;
   title: string;
   platform: string;
   amount: string;
@@ -11,6 +13,7 @@ interface PaymentCardProps {
 }
 
 const PaymentCard: React.FC<PaymentCardProps> = ({
+  active,
   title,
   platform,
   amount,
@@ -23,36 +26,48 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
     info: "bg-[#DBEAFE] text-[#1E40AF] border-[#1E40AF]",
     warning: "bg-[#FEF3C7] text-[#D97706] border-[#FED7AA]",
   };
+
   const walletstatusColors = {
-    funded: "bg-[#DCFCE7] text-[#166534] ",
+    funded: "bg-[#DCFCE7] text-[#166534]",
     unfunded: "bg-[#FEE2E2] text-[#DC2626]",
-    pending: "bg-[#FEE2E2] text-[#DC2626] ",
+    pending: "bg-[#FEF9C3] text-[#854D0E]",
   };
 
+  const capitalize = (text: string) =>
+    text.charAt(0).toUpperCase() + text.slice(1);
+
   return (
-    <div className="flex items-start justify-between bg-white py-[8px] px-[16px]  border-b border-[#E4E4E7] w-full gap-4">
+    <div
+      className={`flex items-start justify-between ${
+        active ? "bg-gray-300" : "bg-white"
+      }  py-2 px-4 border-b border-[#E4E4E7] w-full gap-4 cursor-pointer`}
+    >
       <div className="space-y-3">
         <h3 className="font-medium text-gray-900">{title}</h3>
         <p className="text-sm text-gray-500">{amount}</p>
       </div>
+
       <div className="space-y-3">
         <p className="font-semibold text-gray-900">{platform}</p>
         <Badge
           variant="secondary"
           className={`rounded-full ${walletstatusColors[walletStatus]}`}
         >
-          {walletStatus}
+          {capitalize(walletStatus)}
         </Badge>
       </div>
+
       <div className="flex flex-col items-end space-y-3">
-        <Badge
-          variant="secondary"
-          className={`rounded-full ${statusColors[status]}`}
-        >
-          {status.charAt(0).toUpperCase() + status.slice(1)}
-        </Badge>
+        {walletStatus === "funded" && (
+          <Badge
+            variant="secondary"
+            className={`rounded-full ${statusColors[status]}`}
+          >
+            {capitalize(status)}
+          </Badge>
+        )}
         <div className="text-xs text-gray-500 flex items-center gap-2">
-          <MessageSquare size={15} className="inline " />
+          <MessageSquare size={15} />
           {messagesCount} {messagesCount === 1 ? "message" : "messages"}
         </div>
       </div>
