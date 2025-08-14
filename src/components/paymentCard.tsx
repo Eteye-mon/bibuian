@@ -49,23 +49,23 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
 
       <div className="space-y-3">
         <p className="font-semibold text-gray-900">{platform}</p>
-        <Badge
-          variant="secondary"
-          className={`rounded-full ${walletstatusColors[walletStatus]}`}
-        >
-          {capitalize(walletStatus)}
-        </Badge>
-      </div>
-
-      <div className="flex flex-col items-end space-y-3">
         {walletStatus === "funded" && (
           <Badge
             variant="secondary"
-            className={`rounded-full ${statusColors[status]}`}
+            className={`rounded-full ${walletstatusColors[walletStatus]}`}
           >
-            {capitalize(status)}
+            {capitalize(walletStatus)}
           </Badge>
         )}
+      </div>
+
+      <div className="flex flex-col items-end space-y-3">
+        <Badge
+          variant="secondary"
+          className={`rounded-full ${statusColors[status]}`}
+        >
+          {capitalize(status)}
+        </Badge>
         <div className="text-xs text-gray-500 flex items-center gap-2">
           <MessageSquare size={15} />
           {messagesCount} {messagesCount === 1 ? "message" : "messages"}
