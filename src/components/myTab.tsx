@@ -59,7 +59,7 @@ function MyTab() {
         </TabsList>
         <TabsContent value="all">
           <div className="grid lg:grid-cols-3 gap-  bg-white min-h-screen">
-            <div className="py-3 w-full border-r min-h-screen">
+            <div className=" w-full border-r min-h-screen">
               <TabsWithIcon />
             </div>
             <div className="col-span-2 hidden lg:block">
