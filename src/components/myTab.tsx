@@ -36,25 +36,25 @@ function MyTab() {
             value="all"
             className="rounded-none w-full md:w-[290px] h-[32px] active"
           >
-            All(6){" "}
+            All (6){" "}
           </TabsTrigger>
           <TabsTrigger
             value="urgent"
             className="rounded-none w-full md:w-[290px] h-[32px]"
           >
-            Urgent(11)
+            Urgent (11)
           </TabsTrigger>
           <TabsTrigger
             value="warning"
             className="rounded-none w-full md:w-[290px] h-[32px]"
           >
-            Warning(11)
+            Warning (11)
           </TabsTrigger>
           <TabsTrigger
             value="info"
             className="rounded-none w-full md:w-[290px] h-[32px]"
           >
-            Info(11)
+            Info (11)
           </TabsTrigger>
         </TabsList>
         <TabsContent value="all">

@@ -6,7 +6,7 @@ import EmptyState from "./emptystate";
 
 const tabs = [
   {
-    name: "Excalated(2)",
+    name: "Excalated (2)",
     value: "excalated",
     icon: Info,
     content: (
@@ -60,7 +60,7 @@ const tabs = [
     ),
   },
   {
-    name: "Paid(6)",
+    name: "Paid (6)",
     value: "paid",
     icon: CheckCircle2,
     content: (
