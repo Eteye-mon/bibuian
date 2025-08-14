@@ -84,15 +84,16 @@ const tabs = [
 
 const TabsWithIcon = () => {
   return (
-    <div className="">
-      <Tabs defaultValue="excalated" className="gap-4">
-        <TabsList className="flex items-center justify-center">
+    <div className="p">
+      <Tabs defaultValue="excalated" className="gap-4 w-full bg-[#F3F4F6]">
+        <TabsList className="flex items-center justify-center gap-4 ms-3 mt-5 ">
           {tabs.map(({ icon: Icon, name, value }) => (
             <TabsTrigger
               key={value}
               value={value}
-              className="flex items-center gap-1 px-2.5 sm:px-3">
-              <Icon />
+              className="flex items-center gap-1 p-[6px] text-[12px] bg-white px-6 gap-2"
+            >
+              <Icon className="text-[12px]" />
               {name}
             </TabsTrigger>
           ))}

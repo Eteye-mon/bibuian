@@ -33,11 +33,31 @@ export function ChatMessagePane() {
           type={message.type === "customer" ? "outgoing" : "incoming"}
           variant="bubble"
         >
-          <ChatMessageContent content={<>
-            <span className="font-bold">{message.type}</span>
-            <p>{message.content}</p>
-            <span className="text-end font-normal">{message.date}</span>
-          </>} />
+          <ChatMessageContent
+            content={
+              <>
+                <span
+                  className={`font-bold ${
+                    message.type === "customer"
+                      ? "text-[#FEF3C7]"
+                      : "text-[#6B7280]"
+                  }`}
+                >
+                  {message.type}
+                </span>
+                <p className="font-normal">{message.content}</p>
+                <span
+                  className={`font-normal text-end ${
+                    message.type === "customer"
+                      ? "text-[#FEF3C7]"
+                      : "text-[#6B7280]"
+                  }`}
+                >
+                  {message.date}
+                </span>
+              </>
+            }
+          />
         </ChatMessage>
       ))}
     </div>

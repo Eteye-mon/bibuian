@@ -39,7 +39,7 @@ const PaymentCard: React.FC<PaymentCardProps> = ({
   return (
     <div
       className={`flex items-start justify-between ${
-        active ? "bg-gray-300" : "bg-white"
+        active ? "bg-[#F3F4F6]" : "bg-white"
       }  py-2 px-4 border-b border-[#E4E4E7] w-full gap-4 cursor-pointer`}
     >
       <div className="space-y-3">
