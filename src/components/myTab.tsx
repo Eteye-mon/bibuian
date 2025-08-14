@@ -58,11 +58,11 @@ function MyTab() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="all">
-          <div className="grid md:grid-cols-3 gap-  bg-white min-h-screen">
+          <div className="grid lg:grid-cols-3 gap-  bg-white min-h-screen">
             <div className="py-3 w-full border-r min-h-screen">
               <TabsWithIcon />
             </div>
-            <div className="col-span-2 hidden md:block">
+            <div className="col-span-2 hidden lg:block">
               <TradeTicket
                 agent="PaxfulAgent001"
                 status="Urgent"
@@ -75,8 +75,8 @@ function MyTab() {
                 isDetailsOpen={showTradeDetails}
               />
 
-              <div className="flex justify-between">
-                <div className="bg-[#f9fafb] w-full p-6 flex flex-wrap justify-end items-end ">
+              <div className="flex justify-between ">
+                <div className="bg-[#f9fafb] w-full p-6 flex flex-wrap justify-end items-end hscreen">
                   <ChatMessagePane />
                   <CustomMessageUi />
                 </div>

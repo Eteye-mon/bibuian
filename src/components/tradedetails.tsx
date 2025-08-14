@@ -21,7 +21,7 @@ interface Props {
 
 export default function TradeDetails({ data }: Props) {
   return (
-    <div className="bg-white border-l p-6 w-full max-w-2xl">
+    <div className="bg-white border-l border-b rounded-b-xl p-6 w-full max-w-2xl">
       <h2 className="text-lg font-semibold mb-4">Trade Details</h2>
 
       <div className="space-y-3 text-sm">

@@ -31,7 +31,7 @@ export default function Header() {
           </div>
         </form>
       </div>
-      <div className="md:flex hidden gap-2 items-center text-[#71717A] hover:text-[#71717A]">
+      <div className="lg:flex hidden gap-2 items-center text-[#71717A] hover:text-[#71717A]">
         <Button variant="ghost" size="sm" className="cursor-pointer">
           <RefreshIcon className="cursor-pointer" />
         </Button>
@@ -48,14 +48,14 @@ export default function Header() {
       <Button
         variant="ghost"
         size="lg"
-        className="rounded-[6px] py-[8px] px-[20px] bg-[#FFFFFF] cursor-pointer  text-[#71717A] border border-[#F3F4F6] w-[115px] md:block hidden"
+        className="rounded-[6px] py-[8px] px-[20px] bg-[#FFFFFF] cursor-pointer  text-[#71717A] border border-[#F3F4F6] w-[115px] lg:block hidden"
       >
         Break
       </Button>
       <Button
         variant="ghost"
         size="lg"
-        className="rounded-[6px] py-[8px] px-[20px] bg-[#FEF2F2] cursor-pointer hover:bg-[#FEF2F2] text-[#FF3B30] hover:text-[#FF3B30] border border-[#FF3B30] w-[115px]  dark:border-gray-800 md:block hidden"
+        className="rounded-[6px] py-[8px] px-[20px] bg-[#FEF2F2] cursor-pointer hover:bg-[#FEF2F2] text-[#FF3B30] hover:text-[#FF3B30] border border-[#FF3B30] w-[115px]  dark:border-gray-800 lg:block hidden"
       >
         Clock Out
       </Button>

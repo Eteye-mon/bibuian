@@ -166,9 +166,10 @@ const chatMessageContentVariants = cva("flex flex-col gap-2", {
   },
 });
 
-interface ChatMessageContentProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ChatMessageContentProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "content"> {
   id?: string;
-  content: string;
+  content?: React.ReactNode; // JSX, string, fragment, etc.
 }
 
 const ChatMessageContent = React.forwardRef<
@@ -187,11 +188,12 @@ const ChatMessageContent = React.forwardRef<
       className={cn(chatMessageContentVariants({ variant, type, className }))}
       {...props}
     >
-      {content.length > 0 && <MarkdownContent id={id} content={content} />}
+      {content}
       {children}
     </div>
   );
 });
 ChatMessageContent.displayName = "ChatMessageContent";
+
 
 export { ChatMessage, ChatMessageAvatar, ChatMessageContent };

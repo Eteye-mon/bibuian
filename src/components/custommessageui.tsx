@@ -23,7 +23,7 @@ export function CustomMessageUi() {
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-col items-center space-y-4 p-4  sm:space-y-8">
+    <div className="mx-auto flex w-full max-w-4xl flex-col items-center space-y-4 p-4  sm:space-y-8 mt-16">
       <div className="w-full flex">
         <div className=" w-full">
           <div className="overflow-y-hidden border-border bg-secondary/20 relative rounded-xl border">
@@ -37,9 +37,9 @@ export function CustomMessageUi() {
               className={cn(
                 "w-full px-4 py-3",
                 "resize-none",
-                "bg-transparent",
+                "bg-white",
                 "border-none",
-                "text-sm",
+                "text-lg",
                 "focus:outline-none",
                 "focus-visible:ring-0 focus-visible:ring-offset-0",
                 "placeholder:text-sm",
