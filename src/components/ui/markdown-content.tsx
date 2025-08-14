@@ -16,11 +16,11 @@ const extractTextContent = (node: React.ReactNode): string => {
     return node.map(extractTextContent).join("");
   }
   if (isValidElement(node)) {
-    return extractTextContent(node.props.children);
+    const element = node as React.ReactElement<{ children?: React.ReactNode }>;
+    return extractTextContent(element.props.children);
   }
   return "";
 };
-
 interface HighlightedPreProps extends React.HTMLAttributes<HTMLPreElement> {
   language: string;
 }
