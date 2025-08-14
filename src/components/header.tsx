@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { User2Icon } from 'lucide-react';
+import { CheckIcon, User2Icon } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -31,7 +31,7 @@ export default function Header() {
           </div>
         </form>
       </div>
-      <div className="flex gap-2 items-center text-[#71717A] hover:text-[#71717A]">
+      <div className="md:flex hidden gap-2 items-center text-[#71717A] hover:text-[#71717A]">
         <Button variant="ghost" size="sm" className="cursor-pointer">
           <RefreshIcon className="cursor-pointer" />
         </Button>
@@ -48,32 +48,36 @@ export default function Header() {
       <Button
         variant="ghost"
         size="lg"
-        className="rounded-[6px] py-[8px] px-[20px] bg-[#FFFFFF] cursor-pointer  text-[#71717A] border border-[#F3F4F6] w-[115px] "
+        className="rounded-[6px] py-[8px] px-[20px] bg-[#FFFFFF] cursor-pointer  text-[#71717A] border border-[#F3F4F6] w-[115px] md:block hidden"
       >
         Break
       </Button>
       <Button
         variant="ghost"
         size="lg"
-        className="rounded-[6px] py-[8px] px-[20px] bg-[#FEF2F2] cursor-pointer hover:bg-[#FEF2F2] text-[#FF3B30] hover:text-[#FF3B30] border border-[#FF3B30] w-[115px]  dark:border-gray-800"
+        className="rounded-[6px] py-[8px] px-[20px] bg-[#FEF2F2] cursor-pointer hover:bg-[#FEF2F2] text-[#FF3B30] hover:text-[#FF3B30] border border-[#FF3B30] w-[115px]  dark:border-gray-800 md:block hidden"
       >
         Clock Out
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <div className="flex items-center gap-x-2">
-            <Avatar>
-              <AvatarImage
-                className="h-[36px] w-[36px]"
-                src="https://github.com/shadcn.png"
-              />
-              <AvatarFallback>
-                {" "}
-                <User2Icon className="w-[10px] h-[13px]" />
-              </AvatarFallback>
-            </Avatar>
+            <div className="relative w-fit">
+              <Avatar className="ring-offset-background ring-2 ring-green-600 ring-offset-2 ">
+                <AvatarImage
+                  className="h-[36px] w-[36px]"
+                  src="https://github.com/shadcn.png"
+                />
+                <AvatarFallback>
+                  <User2Icon className="w-[10px] h-[13px]" />
+                </AvatarFallback>
+              </Avatar>
+              <span className="md:hidden absolute -end-1.5 -bottom-1.5 inline-flex size-4 items-center justify-center rounded-full bg-green-600 dark:bg-green-400">
+                <CheckIcon className="size-3 text-white" />
+              </span>
+            </div>
 
-            <div>
+            <div className="hidden md:block">
               <h1 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
                 Support Agent
               </h1>
