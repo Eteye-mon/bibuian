@@ -62,7 +62,7 @@ function MyTab() {
             <div className=" w-full border-r min-h-screen">
               <TabsWithIcon />
             </div>
-            <div className="col-span-2 hidden lg:block">
+            <div className="col-span-2 hidden lg:block bg-[#f9fafb] ">
               <TradeTicket
                 agent="PaxfulAgent001"
                 status="Urgent"
@@ -80,7 +80,7 @@ function MyTab() {
                   <ChatMessagePane />
                   <CustomMessageUi />
                 </div>
-                <div className="bg-gray-100 flex justify-center items-start">
+                <div className=" flex justify-center items-start">
                   {showTradeDetails && <TradeDetails data={tradeData} />}
                 </div>
               </div>

@@ -91,9 +91,9 @@ const TabsWithIcon = () => {
             <TabsTrigger
               key={value}
               value={value}
-              className="flex items-center rounded-none p-[6px] text-[12px] bg-white  gap-2"
+              className="flex items-center  p-[6px] text-[12px] bg-white rounded-[4px] gap-2"
             >
-              <Icon className="text-[12px]" />
+              <Icon className="text-[12px] h-[10px] w-[10px]" />
               {name}
             </TabsTrigger>
           ))}

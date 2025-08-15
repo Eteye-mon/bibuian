@@ -42,25 +42,26 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
   const [assignDialogOpen, setAssignDialogOpen] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   return (
-    <div className="flex flex-wrap items-center justify-between p-4 bg-white border-b gap-3">
-      <div className="flex flex-col min-w-[150px]">
+    <div className="flex flex-wrap items-start justify-between p-4 bg-white border-b gap-3">
+      <div className="flex flex-col ">
         <div className="flex items-center gap-4">
-          <span className="font-medium text-gray-900">{agent}</span>
-          <span
-            className={`px-2 py-0.5 text-xs rounded-full ${
-              status === "Urgent"
-                ? "bg-red-100 text-red-600"
-                : "bg-gray-100 text-gray-600"
-            }`}
-          >
-            {status}
-          </span>
+          <span className="font-medium text-gray-900 text-[12px]">{agent}</span>
         </div>
         <span className="text-[12px] text-[#6B7280CC] font-normal ">
           Paid: {paidTo}
         </span>
       </div>
-
+      <div className="">
+        <span
+          className={`px-2 py-0.5 text-xs rounded-full ${
+            status === "Urgent"
+              ? "bg-red-100 text-red-600"
+              : "bg-gray-100 text-gray-600"
+          }`}
+        >
+          {status}
+        </span>
+      </div>
       <div className="flex flex-col text-[12px] text-[#6B7280CC] font-normal  min-w-[180px] ">
         <span>
           Ticket ID: {ticketId} • {date}
@@ -70,12 +71,12 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
         </span>
       </div>
 
-      <div className="flex items-center gap-4 min-w-[200px]">
+      <div className="flex items-start gap-4 min-w-[200px]">
         <span className="flex items-center gap-3 text-[12px] text-[#6B7280CC] font-normal ">
           <svg
-            width="10"
-            height="10"
-            viewBox="0 0 10 10"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -103,28 +104,28 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
         <div className="relative">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="p-[8px] border rounded-md bg-white hover:bg-gray-50 text-[12px] text-[#000000] font-normal  flex items-center">
-                Actions <ChevronDown className="text-[12px] text-[#000000]" />
+              <button className="p-[8px] border rounded-[6px] max-w-[77px bg-white hover:bg-gray-50 text-[10px] text-[#000000] font-normal  flex items-center cursor-pointer">
+                Actions <ChevronDown className="text-[12px] text-[#000000]" size={12} />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="start">
+            <DropdownMenuContent className="w-56" align="end">
               <DropdownMenuGroup>
-                <DropdownMenuItem className="text-[#16A34A]">
+                <DropdownMenuItem className="text-[#16A34A] cursor-pointer">
                   <CircleCheck className="text-[#16A34A]" />
                   Mark as Resolved
                 </DropdownMenuItem>
-                <DropdownMenuItem className="text-[#FFD52D]">
+                <DropdownMenuItem className="text-[#FFD52D] cursor-pointer">
                   <CircleArrowOutUpRight className="text-[#FFD52D]" />
                   Forward to Admin
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-[#DC2626]"
+                  className="text-[#DC2626] cursor-pointer"
                   onClick={() => setCancelDialogOpen(true)}
                 >
                   <CircleX className="text-[#DC2626]" />
                   Cancel Trade
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setAssignDialogOpen(true)}>
+                <DropdownMenuItem className="cursor-pointer" onClick={() => setAssignDialogOpen(true)}>
                   <UserRoundCheck className="text-[#000]" />
                   Reassign Trade
                 </DropdownMenuItem>
@@ -135,7 +136,7 @@ const TradeTicket: React.FC<TradeTicketProps> = ({
 
         <button
           onClick={onToggleDetails}
-          className="bg-[#F59E0B] text-white p-[8px] rounded-md text-sm"
+          className="bg-[#F59E0B] text-white p-[8px] rounded-[6px] max-w-[108px] text-[10px] cursor-pointer"
         >
           {isDetailsOpen ? "Hide Details" : "Trade Details"}
         </button>

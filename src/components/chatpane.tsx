@@ -37,7 +37,7 @@ export function ChatMessagePane() {
             content={
               <>
                 <span
-                  className={`font-bold ${
+                  className={`font-bold text-[12px] ${
                     message.type === "customer"
                       ? "text-[#FEF3C7]"
                       : "text-[#6B7280]"
@@ -45,9 +45,9 @@ export function ChatMessagePane() {
                 >
                   {message.type}
                 </span>
-                <p className="font-normal">{message.content}</p>
+                <p className="font-normal text-[12px]">{message.content}</p>
                 <span
-                  className={`font-normal text-end ${
+                  className={`font-normal text-end text-[12px] ${
                     message.type === "customer"
                       ? "text-[#FEF3C7]"
                       : "text-[#6B7280]"
